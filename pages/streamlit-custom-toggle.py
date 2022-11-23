@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_custom_toggle import st_custom_toggle
+st.set_page_config(layout="wide")
 
 build_badges = st.session_state.build_badges
 
@@ -15,7 +15,8 @@ with st.sidebar:
             unsafe_allow_html=True)
 
 with st.echo(code_location="below"):
-
+    from streamlit_custom_toggle import st_custom_toggle
+    
     col1, col2, col3 = st.columns(3, gap="small")
     with col1:
         calm = st_custom_toggle(
@@ -41,3 +42,8 @@ with st.echo(code_location="below"):
     # "👇 Component is not returning its state ⛔⛔"
     st.code(f"Calm = {calm}, Fun = {fun}, Rock = {rock}")
     "****"
+
+# # "👇 Should behave like this one"
+# from streamlit_toggle import st_toggle_switch
+# a = st_toggle_switch("Label", label_after="On")
+# st.write(a)
